@@ -11,7 +11,9 @@ install:
 
 script:
   - coverage run lehar/tests.py
+  - coverage run lehar/main.py 1 2 3 4 5
   - coverage run lehar/main.py -c cyan 1 2 3 4 5
+  - coverage run lehar/main.py
 
 after_success:
   - CODECLIMATE_REPO_TOKEN=2b5052517a9aa30661d2f5f0b52365759cf7cfdfde3747c5f161e107ef808b1c codeclimate-test-reporter --file ./lehar/.coverage

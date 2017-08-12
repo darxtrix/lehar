@@ -9,5 +9,3 @@ $ python setup.py develop
 # TODO:
 fix case when nothing is provided 
 Fix help section
-Max number is provided case
-Add tests

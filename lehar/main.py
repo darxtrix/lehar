@@ -3,7 +3,7 @@
 # https://github.com/darxtrix/lehar
 # author @darxtrix
 
-import argparse, math, os
+import argparse, math, os, sys
 
 # https://en.wikipedia.org/wiki/Block_Elements
 upticks = u'▁▂▃▄▅▆▇█'
@@ -78,6 +78,8 @@ def _draw_tickgram(numbers):
 
 def draw(numbers,color=None):
     numbers = _sanitize_numbers(numbers)
+    if len(numbers) == 0:
+        return u""
     if color:
         return u"{0}{1}{2}".format(COLORS[color],
                                  _draw_tickgram(_handle_negatives(numbers)),
@@ -88,7 +90,7 @@ def draw(numbers,color=None):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='patanga argument parser')
+    parser = argparse.ArgumentParser(description='lehar argument parser')
     parser.add_argument('-c',
                         dest='color',
                         action='store',
@@ -101,6 +103,10 @@ def main():
                         action='version',
                         version='lehar {}'.format(_get_version()))
     commandline_options, input_numbers = parser.parse_known_args()
+    # Exit if no data supplied 
+    if len(input_numbers) == 0:
+        sys.stdout.write("No data supplied, exiting.\n")
+        sys.exit(0)
     numbers = _sanitize_numbers(input_numbers)
     if commandline_options.color:
         print(u"{0}{1}{2}".format(COLORS[commandline_options.color],

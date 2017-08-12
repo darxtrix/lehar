@@ -16,7 +16,7 @@ Python library to generate sparklines ▁▂▄▅▇█ in your shell based upo
 
 ## Installation
 
-
+TODO
 
 ## API
 
@@ -74,6 +74,7 @@ $ lehar -c red 1 2 3 4 5
 
 ## Contributing Guide
 
+TODO
 
 ## License
 

@@ -24,6 +24,9 @@ class LeharMethodsTest(unittest.TestCase):
     def test_max_zero(self):
         self.assertEqual(draw([-34,-12,-3,0]), u'▁▆██')
 
+    def test_no_data_supplied(self):
+        self.assertEqual(draw([]),u'')
+
 
 if __name__ == '__main__':
     unittest.main()
