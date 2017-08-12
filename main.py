@@ -39,6 +39,16 @@ def _draw_tickgram(numbers):
         return ''.join([ ' ' if type(x)==str else upticks[x-1] if x != 0 else upticks[0] for x in upticks_indexes ])
 
 
+def draw(numbers,color=None):
+    if color:
+        return u"{0}{1}{2}".format(COLORS[commandline_options.color],
+                                 _draw_tickgram(_handle_negatives(numbers)),
+                                 RESET
+                                 )
+    else:
+        return _draw_tickgram(_handle_negatives(numbers))
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='patanga argument parser')
     parser.add_argument('-c',
