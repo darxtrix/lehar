@@ -25,6 +25,8 @@ COLORS = {
     'light_cyan' : '\033[96m'
 }
 
+SUPPORTED_COLORS = COLORS.keys()
+
 def _get_version():
     with open('VERSION','r') as f:
         return f.read().strip()
@@ -81,18 +83,18 @@ def draw(numbers,color=None):
         return _draw_tickgram(_handle_negatives(numbers))
 
 
-if __name__ == '__main__':
+def main():
     parser = argparse.ArgumentParser(description='patanga argument parser')
     parser.add_argument('-c',
                         dest='color',
                         action='store',
                         type=str,
                         required=False,
-                        choices=COLORS.keys(),
+                        choices=SUPPORTED_COLORS,
                         help="Valid colors are {0}".format('\n'.join(COLORS.keys()))
                         )
     parser.add_argument('-v',
-                        action='version',
+                        action='version',gc
                         version='patanga {}'.format(_get_version()))
     commandline_options, input_numbers = parser.parse_known_args()
     numbers = _sanitize_numbers(input_numbers)
@@ -104,3 +106,7 @@ if __name__ == '__main__':
              )
     else:
         print(_draw_tickgram(_handle_negatives(numbers)))
+
+
+if __name__ == '__main__':
+    main()
