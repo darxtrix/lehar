@@ -12,21 +12,13 @@ from os import path
 
 here = path.abspath(path.dirname(__file__))
 
-# Get the long description from the README file
-with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
-    long_description = f.read()
-
-# Get the version of lehar
-with open('VERSION','r') as f:
-    VERSION = f.read().strip()
-
 setup(
     name='lehar',
 
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version=VERSION,
+    version=open('lehar/VERSION').read(),
 
     description='',
     long_description=open('README.md').read(),
@@ -71,11 +63,11 @@ setup(
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
-    #packages=find_packages(exclude=['contrib', 'docs', 'tests']),
+    packages=["lehar"],
 
     # Alternatively, if you want to distribute just a my_module.py, uncomment
     # this:
-    py_modules=["main.py"],
+    #py_modules=["lehar"],
 
     # List run-time dependencies here.  These will be installed by pip when
     # your project is installed. For an analysis of "install_requires" vs pip's
@@ -108,7 +100,7 @@ setup(
     # pip to create the appropriate form of executable for the target platform.
     entry_points={
         'console_scripts': [
-            'lehar = main:main',
+            'lehar = lehar.main:main',
         ],
     },
 )

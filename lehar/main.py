@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import argparse, math
+import argparse, math, os
 
 # https://en.wikipedia.org/wiki/Block_Elements
 upticks = u'▁▂▃▄▅▆▇█'
@@ -28,7 +28,8 @@ COLORS = {
 SUPPORTED_COLORS = COLORS.keys()
 
 def _get_version():
-    with open('VERSION','r') as f:
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    with open(os.path.join(dir_path,'VERSION'),'r') as f:
         return f.read().strip()
 
 def _sanitize_numbers(uncleaned_numbers):
@@ -94,7 +95,7 @@ def main():
                         help="Valid colors are {0}".format('\n'.join(COLORS.keys()))
                         )
     parser.add_argument('-v',
-                        action='version',gc
+                        action='version',
                         version='patanga {}'.format(_get_version()))
     commandline_options, input_numbers = parser.parse_known_args()
     numbers = _sanitize_numbers(input_numbers)
