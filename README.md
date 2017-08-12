@@ -7,16 +7,14 @@ Python library to generate sparklines ▁▂▄▅▇█ in your shell based upo
 
 [Some cool usage](https://github.com/holman/spark/wiki/Wicked-Cool-Usage)
 
+## Demo
 
-## Support
-`lehar` supports both `Python2` & `Python3`.
+<a href="https://asciinema.org/a/vvtuqfiG5bOkc5ybMvAXf4bsM" target="_blank"><img src="https://asciinema.org/a/vvtuqfiG5bOkc5ybMvAXf4bsM.png" /></a>
 
 
 ## Installation
 
-## Demo
 
-<a href="https://asciinema.org/a/vvtuqfiG5bOkc5ybMvAXf4bsM" target="_blank"><img src="https://asciinema.org/a/vvtuqfiG5bOkc5ybMvAXf4bsM.png" /></a>
 
 ## API
 
@@ -27,7 +25,7 @@ Python library to generate sparklines ▁▂▄▅▇█ in your shell based upo
 
 #### options
 Only supported option is `color`
-eg. `color=red`
+eg. `color='red'`
 
 #### Basic Usage
 
@@ -63,9 +61,15 @@ eg. `color=red`
 
 ## Commandline
 
+```shell 
+$ lehar 1 2 3 4 5
+
+$ lehar -c red 1 2 3 4 5
+```
+
+## Support
+`lehar` supports both `Python2` & `Python3`.
+
 ## License
 
-
-
-
-
+MIT © [Ankush Sharma](http://github.com/darxtrix)
