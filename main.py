@@ -1,14 +1,45 @@
 # -*- coding: utf-8 -*-
 
 import argparse, math
-from colors import COLORS, RESET
 
 # https://en.wikipedia.org/wiki/Block_Elements
 upticks = u'▁▂▃▄▅▆▇█'
 
+RESET = '\033[0m'
+
+COLORS = {
+    'black' : '\033[30m',
+    'red' : '\033[31m',
+    'green' : '\033[32m',
+    'orange' : '\033[33m',
+    'blue' : '\033[34m',
+    'purpule' : '\033[35m',
+    'cyan' : '\033[36m',
+    'light_grey' : '\033[37m',
+    'dark_grey' : '\033[90m',
+    'light_red' : '\033[91m',
+    'light_green' : '\033[92m',
+    'yellow' : '\033[93m',
+    'light_blue' : '\033[94m',
+    'pink' : '\033[95m',
+    'light_cyan' : '\033[96m'
+}
+
 def _get_version():
     with open('VERSION','r') as f:
         return f.read().strip()
+
+def _sanitize_numbers(uncleaned_numbers):
+    """
+        Convert strings to integers if possible
+    """
+    cleaned_numbers = []
+    for x in uncleaned_numbers:
+        try:
+            cleaned_numbers.append(int(x))
+        except ValueError:
+            cleaned_numbers.append(x)
+    return cleaned_numbers
 
 
 def _handle_negatives(numbers):
@@ -40,8 +71,9 @@ def _draw_tickgram(numbers):
 
 
 def draw(numbers,color=None):
+    numbers = _sanitize_numbers(numbers)
     if color:
-        return u"{0}{1}{2}".format(COLORS[commandline_options.color],
+        return u"{0}{1}{2}".format(COLORS[color],
                                  _draw_tickgram(_handle_negatives(numbers)),
                                  RESET
                                  )
@@ -63,13 +95,7 @@ if __name__ == '__main__':
                         action='version',
                         version='patanga {}'.format(_get_version()))
     commandline_options, input_numbers = parser.parse_known_args()
-    # Convert strings to integers if possible
-    numbers = []
-    for x in input_numbers:
-        try:
-            numbers.append(int(x))
-        except ValueError:
-            numbers.append(x)
+    numbers = _sanitize_numbers(input_numbers)
     if commandline_options.color:
         print(u"{0}{1}{2}".format(COLORS[commandline_options.color],
                                  _draw_tickgram(_handle_negatives(numbers)),
