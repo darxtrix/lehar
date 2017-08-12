@@ -3,6 +3,8 @@ lehar
 
 ![Header image](docs/header.png)
 
+![travis_badge](https://travis-ci.org/darxtrix/lehar.svg?branch=master)
+
 Python library to generate sparklines ▁▂▄▅▇█ in your shell based upon relative ordering of data. `lehar` is a [Hindi](https://en.wikipedia.org/wiki/Hindi) word which means wave. `lehar` can be invoked via *commandline* also.
 
 [Some cool usage](https://github.com/holman/spark/wiki/Wicked-Cool-Usage)

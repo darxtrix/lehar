@@ -10,4 +10,8 @@ install:
   - pip install -r requirements.txt
 
 script:
-  - python lehar/tests.py
+  - coverage lehar/tests.py
+  - coverage lehar/main.py -c cyan 1 2 3 4 5
+
+after_success:
+  - CODECLIMATE_REPO_TOKEN='2b5052517a9aa30661d2f5f0b52365759cf7cfdfde3747c5f161e107ef808b1c' codeclimate-test-reporter
