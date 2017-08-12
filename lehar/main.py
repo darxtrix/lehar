@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 
+# https://github.com/darxtrix/lehar
+# author @darxtrix
+
 import argparse, math, os
 
 # https://en.wikipedia.org/wiki/Block_Elements
@@ -92,11 +95,11 @@ def main():
                         type=str,
                         required=False,
                         choices=SUPPORTED_COLORS,
-                        help="Valid colors are {0}".format('\n'.join(COLORS.keys()))
+                        help="Valid colors are {0}".format(' '.join(COLORS.keys()))
                         )
     parser.add_argument('-v',
                         action='version',
-                        version='patanga {}'.format(_get_version()))
+                        version='lehar {}'.format(_get_version()))
     commandline_options, input_numbers = parser.parse_known_args()
     numbers = _sanitize_numbers(input_numbers)
     if commandline_options.color:
