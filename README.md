@@ -16,6 +16,7 @@ Python library to generate sparklines ▁▂▄▅▇█ in your shell based upo
 
 ## Demo
 
+<a href="https://asciinema.org/a/vvtuqfiG5bOkc5ybMvAXf4bsM" target="_blank"><img src="https://asciinema.org/a/vvtuqfiG5bOkc5ybMvAXf4bsM.png" /></a>
 
 ## API
 
