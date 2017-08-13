@@ -4,3 +4,5 @@ include README.md
 include requirements.txt
 include LICENSE
 include test.data
+include README.rst
+include lehar/VERSION

@@ -21,7 +21,7 @@ $ git shortlog -s | cut -f1 | lehar
 
 ## Installation
 
-Using `homebrew`:
+Using `homebrew` [Currently not working]:
 ```Bash
 $ brew install lehar 
 ```
@@ -110,6 +110,8 @@ $ python tests.py
 
 [![](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BQCW33ZE61TN052NM8KQF803/Its%20awesome%2C%20thanks%20!)](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BQCW33ZE61TN052NM8KQF803/Its%20awesome%2C%20thanks%20!/vote)
 [![](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BQCW33ZE61TN052NM8KQF803/Needs%20more%20improvement)](https://m131jyck4m.execute-api.us-west-2.amazonaws.com/prod/poll/01BQCW33ZE61TN052NM8KQF803/Needs%20more%20improvement/vote)
+
+Please file as issue [here](https://github.com/darxtrix/lehar/issues) for suggesting the improvements required.
 
 ## License
 
