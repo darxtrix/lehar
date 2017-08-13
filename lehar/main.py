@@ -101,12 +101,20 @@ def main():
                         )
     parser.add_argument('-v',
                         action='version',
-                        version='lehar {}'.format(_get_version()))
-    commandline_options, input_numbers = parser.parse_known_args()
+                        version='lehar {}'.format(_get_version())
+                        )
+    # When the input is piped in or redirected from a file 
+    if not sys.stdin.isatty(): 
+        # argparse reads from a list in format ["-c","yellow","1","2"."3","4","5"] but read gives single chars
+        commandline_options, input_numbers = parser.parse_known_args(sys.stdin.read().rstrip().split(" "))
+    else:
+        commandline_options, input_numbers = parser.parse_known_args()
+
     # Exit if no data supplied 
     if len(input_numbers) == 0:
         sys.stdout.write("No data supplied, exiting.\n")
         sys.exit(0)
+
     numbers = _sanitize_numbers(input_numbers)
     if commandline_options.color:
         print(u"{0}{1}{2}".format(COLORS[commandline_options.color],

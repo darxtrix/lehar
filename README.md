@@ -61,12 +61,16 @@ eg. `color='red'`
 
 ```
 
-## Commandline
+## Command line
 
-```shell 
+```Bash
 $ lehar 1 2 3 4 5
 
 $ lehar -c red 1 2 3 4 5
+
+$ echo "-c cyan 1 2 3 4 5" | lehar
+
+$ lehar < input
 ```
 
 ## Support
