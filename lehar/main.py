@@ -107,6 +107,9 @@ def main():
     if not sys.stdin.isatty(): 
         # argparse reads from a list in format ["-c","yellow","1","2"."3","4","5"] but read gives single chars
         commandline_options, input_numbers = parser.parse_known_args(sys.stdin.read().rstrip().split(" "))
+        # Perform cleaning of commandline options to rempve spaces/new_lines
+        input_numbers = [x.strip() for x in input_numbers]
+        input_numbers = list(filter(lambda x : x!='',input_numbers))
     else:
         commandline_options, input_numbers = parser.parse_known_args()
 
