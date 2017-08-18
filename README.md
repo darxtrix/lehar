@@ -21,11 +21,6 @@ $ git shortlog -s | cut -f1 | lehar
 
 ## Installation
 
-Using `homebrew` [Currently not working]:
-```Bash
-$ brew install lehar 
-```
-
 Using `pip`
 ```
 $ pip install lehar
