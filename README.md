@@ -16,7 +16,9 @@ $ git shortlog -s | cut -f1 | lehar
 
 ## Why ? : https://medium.com/@darxtrix/visualizing-data-in-terminal-using-lehar-7cfded09c1ad
 
-## Note : Each data point in the data set is plotted relative to the maximum data point value with the maximum having the highest plot height. And they are only 5 possible heights so two number with very less fraction difference relative to max data point can take same plot height. Its a way of visualizing variations in data.
+## Note 
+
+Each data point in the data set is plotted relative to the maximum data point value with the maximum having the highest plot height. And they are only 5 possible heights so two number with very less fraction difference relative to max data point can take same plot height. Its a way of visualizing variations in data.
 
 ## Demo
 

@@ -16,7 +16,7 @@ COLORS = {
     'green' : '\033[32m',
     'orange' : '\033[33m',
     'blue' : '\033[34m',
-    'purpule' : '\033[35m',
+    'purple' : '\033[35m',
     'cyan' : '\033[36m',
     'light_grey' : '\033[37m',
     'dark_grey' : '\033[90m',
